@@ -1,0 +1,270 @@
+.orcamento-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #1e293b;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.orcamento-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.header-fixed {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.cards-resumo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+  padding: 1.5rem 2rem;
+}
+
+.orcamento-body {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.orcamento-header-bar {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.orcamento-header-bar h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: center;
+  color: #0f172a;
+}
+
+.button-criar {
+  padding: 0.625rem 1.5rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(to right, #1e293b, #2b6fdc);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.button-criar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.orcamento-table-container {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  overflow-x: auto;
+  max-height: calc(100vh - 400px); 
+}
+
+.orcamento-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orcamento-table th,
+.orcamento-table td {
+  text-align: left;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #334155;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.orcamento-table th {
+  background-color: #e2e8f0;
+  font-weight: 500;
+  color: #1e293b;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.orcamento-table tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+.status-badge {
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-aprovado {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+.status-reprovado {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.status-pendente {
+  background-color: #fefce8;
+  color: #b45309;
+}
+
+.acoes-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-acao {
+  padding: 0.375rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.btn-consultar {
+  background-color: #e0f2fe;
+  color: #0284c7;
+}
+
+.btn-consultar:hover {
+  background-color: #bae6fd;
+}
+
+.btn-editar {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+.btn-editar:hover {
+  background-color: #dcfce7;
+}
+
+.btn-excluir {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.btn-excluir:hover {
+  background-color: #fee2e2;
+}
+
+.status-select {
+  padding: 0.375rem 0.5rem;
+  border-radius: 0.375rem;
+  border: 1px solid #e2e8f0;
+  font-size: 0.75rem;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 1rem;
+}
+
+.modal p {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.modal-info {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.modal-info-row {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.modal-info-label {
+  font-weight: 600;
+  width: 40%;
+  color: #334155;
+}
+
+.modal-info-value {
+  color: #64748b;
+}
+
+@media (max-width: 768px) {
+  .cards-resumo {
+    grid-template-columns: 1fr;
+  }
+
+  .orcamento-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .button-criar {
+    width: 100%;
+  }
+}

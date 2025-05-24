@@ -1,0 +1,307 @@
+.funcionarios-content {
+  flex: 1;
+  padding: 1.25rem 1.25rem 0;
+  background-color: #1e293b;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 70px);
+}
+
+.funcionarios-actions {
+  display: grid;
+  grid-template-columns: 2fr 0.8fr 1.2fr;
+  gap: 1.25rem; 
+  margin-bottom: 1.25rem;
+}
+
+.search-container h3,
+.filter-container h3 {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 0.5rem; 
+}
+
+.search-input-container {
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem; 
+  padding-right: 2.5rem; 
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  font-size: 0.8rem;
+}
+
+.search-icon {
+  position: absolute;
+  right: 0.75rem; 
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+.funcionarios-count {
+  background-color: white;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.funcionarios-count h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.25rem; 
+}
+
+.funcionarios-count p {
+  color: #64748b;
+  font-size: 0.75rem;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-button {
+  width: 100%;
+  padding: 0.75rem; 
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+.dropdown-button.small {
+  padding: 0.5rem 0.75rem; 
+  min-width: 60px; 
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  margin-top: 0.15rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  z-index: 10;
+}
+
+.dropdown-item {
+  padding: 0.75rem; 
+  font-size: 0.8rem;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f5f9;
+}
+
+.add-button-container {
+  display: flex;
+  align-items: flex-end;
+  margin-top: auto; 
+}
+
+.add-button {
+  width: 100%;
+  padding: 0.75rem; 
+  background: linear-gradient(to right, #1e293b, #2b6fdc);
+  color: white;
+  border: 0.1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-button:hover {
+  background-color: #0369a1;
+}
+
+/* Tabela */
+.funcionarios-table-container {
+  background-color: #ecefff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 230px);
+}
+
+/* Cabeçalho da tabela */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem; 
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.table-header h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.table-options {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; 
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.funcionarios-table {
+  overflow-y: auto;
+  flex: 1;
+  max-height: calc(100vh - 300px); 
+  background-color: white; 
+}
+
+.funcionarios-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white; 
+}
+
+.funcionarios-table tbody {
+  background-color: white;
+}
+
+.funcionarios-table tbody:empty {
+  background-color: white; 
+  min-height: 100px; 
+  display: block; 
+}
+
+.funcionarios-table tbody:empty::after {
+  content: "Nenhum funcionário encontrado";
+  display: block;
+  padding: 2rem;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.funcionarios-table th,
+.funcionarios-table td {
+  padding: 0.75rem 1rem; 
+  text-align: left;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.funcionarios-table th {
+  font-weight: 500;
+  color: #64748b;
+  position: sticky;
+  top: 0;
+  background-color: rgb(245, 243, 255);
+  z-index: 1;
+}
+
+.funcionarios-table td {
+  color: #1e293b;
+}
+
+.ver-mais-btn {
+  background: none;
+  border: none;
+  color: #0284c7;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.ver-mais-btn:hover {
+  text-decoration: underline;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem; 
+  padding: 0.75rem; 
+  border-top: 1px solid #e2e8f0;
+}
+
+.pagination-button {
+  width: 2rem;
+  height: 2rem; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+  background-color: white;
+  color: #64748b;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.pagination-button.active {
+  background-color: #0284c7;
+  color: white;
+  border-color: #0284c7;
+}
+
+.pagination-button.next {
+  width: auto;
+  padding: 0 0.5rem;
+}
+
+.filter-add-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: flex-end; 
+}
+
+.empty-row td {
+  padding: 2rem !important;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+  background-color: white;
+}
+
+@media (max-width: 1024px) {
+  .funcionarios-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .funcionarios-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+}
